@@ -9,4 +9,9 @@ import scrapy
 class JavbusItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    Jav_sn = scrapy.Field()
+    Jav_date = scrapy.Field()
+    Jav_url = scrapy.Field()
+    Jav_image_small = scrapy.Field()
+    Jav_image_big = scrapy.Field()
+    Jav_title = scrapy.Field()

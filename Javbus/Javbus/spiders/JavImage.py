@@ -1,7 +1,7 @@
 import sys
 sys.path.append('..')
 import scrapy
-from Javbus.Javbus.items import JavbusItem
+from Javbus.items import JavbusItem
 
 class JavimageSpider(scrapy.Spider):
     name = 'JavImage'
@@ -17,18 +17,18 @@ class JavimageSpider(scrapy.Spider):
             av_sn = avweb.xpath('./a/div[2]/span/date[1]/text()').extract_first()
             av_date = avweb.xpath('./a/div[2]/span/date[2]/text()').extract_first()
             if av_url != None:  # 判断爬下来的内容不为空，再继续...
-                item['av_url'] = av_url
-                item['av_date'] = av_date
-                item['av_image_small'] = av_img
-                item['av_sn'] = av_sn
-                item['av_title'] = av_title
+                item['Jav_url'] = av_url
+                item['Jav_date'] = av_date
+                item['Jav_image_small'] = av_img
+                item['Jav_sn'] = av_sn
+                item['Jav_title'] = av_title
 
                 print('this is tyr')
                 print(av_url)
-                print(item['av_url'])
+                print(item['Jav_url'])
                 print({'item': item})
 
-                yield scrapy.Request(url=item['av_url'], meta={'item': item}, callback=self.parse_deep)
+                yield scrapy.Request(url=item['Jav_url'], meta={'item': item}, callback=self.parse_deep)
                 # meta参数是为了传参存在的，为了是把item传递给下一个函数。
         # next_url = response.xpath('//*[@id="next"]/@href').extract_first()
         # if next_url:
@@ -37,7 +37,7 @@ class JavimageSpider(scrapy.Spider):
 
     def parse_deep(self, response):
         item = response.meta['item']  # 我被这个中括号折磨致死，以后一定要记住[]是字典，{}不是
-        item['av_image_big'] = response.xpath('//*[@class="bigImage"]/img/@src').extract_first()
+        item['Jav_image_big'] = response.xpath('//*[@class="bigImage"]/img/@src').extract_first()
         yield item
 
         # yield {
