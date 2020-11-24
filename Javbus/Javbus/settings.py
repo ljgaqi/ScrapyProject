@@ -62,9 +62,12 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'Javbus.pipelines.JavbusPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    #'scrapy.pipelines.images.ImagesPipeline':1,
+    'Javbus.pipelines.JavbusPipeline': 300,
+    #'Javbus.MyImagePipelines.MyImagePiplines':300,
+}
+IMAGES_STORE='IMAGES'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
