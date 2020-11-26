@@ -16,6 +16,11 @@ class ImageloadSpider(scrapy.Spider):
         for link in links:
             yield scrapy.Request(url=link.url, callback=self.parsedown)
 
+        next_url = response.xpath('//*[@id="next"]/@href').extract_first()
+        if next_url:
+            next_url = response.urljoin(next_url)
+            yield scrapy.Request(next_url, callback=self.parse)
+
     def parsedown(self,response):
         item=JavimageItem()
         item['url']=response.url

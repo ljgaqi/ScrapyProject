@@ -63,8 +63,8 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'scrapy.pipelines.images.ImagesPipeline':1,
-   #'Javimage.pipelines.JavimagePipeline': 300,
+   # 'scrapy.pipelines.images.ImagesPipeline':1,
+   'Javimage.pipelines.JavimagePipeline': 300,
 }
 #图片链接存储在item中的file_url字段中
 #IMAGES_URLS_FIELD='image_urls'
