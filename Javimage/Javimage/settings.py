@@ -1,4 +1,4 @@
-# Scrapy settings for Javbus project
+# Scrapy settings for Javimage project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'Javbus'
+BOT_NAME = 'Javimage'
 
-SPIDER_MODULES = ['Javbus.spiders']
-NEWSPIDER_MODULE = 'Javbus.spiders'
+SPIDER_MODULES = ['Javimage.spiders']
+NEWSPIDER_MODULE = 'Javimage.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'Javbus (+http://www.yourdomain.com)'
+#USER_AGENT = 'Javimage (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'Javbus.middlewares.JavbusSpiderMiddleware': 543,
+#    'Javimage.middlewares.JavimageSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'Javbus.middlewares.JavbusDownloaderMiddleware': 543,
+#    'Javimage.middlewares.JavimageDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -63,14 +63,13 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'scrapy.pipelines.images.ImagesPipeline':1,
-
-    # 'Javbus.pipelines.JavbusPipeline': 300,
-    #'Javbus.MyImagePipelines.MyImagePiplines':300,
+   'scrapy.pipelines.images.ImagesPipeline':1,
+   #'Javimage.pipelines.JavimagePipeline': 300,
 }
-IMAGES_URLS_FIELD='image_urls'
-IMAGES_STORE='./images'
-
+#图片链接存储在item中的file_url字段中
+#IMAGES_URLS_FIELD='image_urls'
+#图片存储到当前目录
+IMAGES_STORE='images'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

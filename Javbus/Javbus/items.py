@@ -17,3 +17,6 @@ class JavbusItem(scrapy.Item):
     #images_urls=scrapy.Field()
     Jav_title = scrapy.Field()
     Jav_time=scrapy.Field()
+    image_urls=scrapy.Field()
+
+
